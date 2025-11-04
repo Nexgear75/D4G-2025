@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 import '@/style/globals.css';
 
 export const metadata: Metadata = {
-  title: 'Lumalex',
+  title: 'Lumax',
   description: 'Résumez un texte de moins de 4000 caractères en une phrase concise et claire de 10 à 15 mots.',
 };
 
