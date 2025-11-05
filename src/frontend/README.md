@@ -1,5 +1,12 @@
 ## Design4Green Front-end
 
+### Setup
+
+- Install dependencies: `pnpm install`
+- Run dev server: `pnpm dev`
+- Build for production: `pnpm build`
+- Run production server: `pnpm start`
+
 ### Testing
 
 This project uses Vitest and Testing Library.
