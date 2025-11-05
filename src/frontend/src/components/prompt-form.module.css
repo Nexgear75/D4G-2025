@@ -39,6 +39,7 @@
     padding: .75rem 1.5rem;
 
     background: var(--background);
+    color: var(--foreground);
     border: 1px solid var(--border);
 
     border-radius: .5rem;
