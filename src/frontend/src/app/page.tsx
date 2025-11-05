@@ -23,37 +23,55 @@ const HomePage = async ({ searchParams }: HomePageParams) => {
     <>
       <header className={styles.header}>
         <h1 className={styles.title}>Design4Green - Lumax</h1>
-        <h2 className={styles.subtitle}>
-          An eco-designed text summarizer that combines efficiency and sustainability.
-        </h2>
+        <p className={styles.subtitle}>An eco-designed text summarizer that combines efficiency and sustainability.</p>
       </header>
 
       <main className={styles.main}>
         <PromptForm defaultPrompt={rawDefaultPrompt ?? ''} defaultOptimized={rawDefaultOptimized === 'true'} />
 
         {typeof summary === 'string' && (
-          <section className={styles.resultContainer}>
+          <section
+            className={styles.resultContainer}
+            aria-label="Summary Results"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <h2 className="sr-only">Generated Summary</h2>
             <p className={styles.summaryText}>{summary}</p>
 
-            <div className={styles.statsContainer}>
+            <div className={styles.statsContainer} role="region" aria-label="Performance Metrics">
+              <h3 className="sr-only">Performance Statistics</h3>
+
               {energy !== undefined && (
                 <div className={styles.statsItem}>
-                  <h3 className={styles.statsLabel}>Energie</h3>
-                  <p className={styles.statsValue}>{energy} Wh</p>
+                  <h4 className={styles.statsLabel} id="energy-label">
+                    Energie
+                  </h4>
+                  <p className={styles.statsValue} aria-labelledby="energy-label">
+                    {energy} <abbr title="Watt-hours">Wh</abbr>
+                  </p>
                 </div>
               )}
 
               {latency !== undefined && (
                 <div className={styles.statsItem}>
-                  <h3 className={styles.statsLabel}>Latence</h3>
-                  <p className={styles.statsValue}>{latency} ms</p>
+                  <h4 className={styles.statsLabel} id="latency-label">
+                    Latence
+                  </h4>
+                  <p className={styles.statsValue} aria-labelledby="latency-label">
+                    {latency} <abbr title="milliseconds">ms</abbr>
+                  </p>
                 </div>
               )}
 
               {memory !== undefined && (
                 <div className={styles.statsItem}>
-                  <h3 className={styles.statsLabel}>Mémoire</h3>
-                  <p className={styles.statsValue}>{memory} Mb</p>
+                  <h4 className={styles.statsLabel} id="memory-label">
+                    Mémoire
+                  </h4>
+                  <p className={styles.statsValue} aria-labelledby="memory-label">
+                    {memory} <abbr title="Megabytes">Mb</abbr>
+                  </p>
                 </div>
               )}
             </div>
