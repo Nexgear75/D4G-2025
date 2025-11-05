@@ -20,7 +20,7 @@ export const getSummary = async (_prevState: State, formData: FormData): Promise
 
   const { error, data } = GetSummarySchema.safeParse({
     prompt: rawPrompt,
-    optimized: rawOptimized,
+    optimized: rawOptimized ?? 'false',
   });
 
   if (error || !data)
