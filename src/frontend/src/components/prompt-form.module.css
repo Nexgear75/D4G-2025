@@ -23,8 +23,16 @@
 
 .formFooter {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .formFooter {
+        flex-direction: row;
+    }
 }
 
 .submitButton {

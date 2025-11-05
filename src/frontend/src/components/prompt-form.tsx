@@ -31,7 +31,7 @@ const PromptForm = ({ defaultPrompt, defaultOptimized }: PromptFormProps) => {
         <Textarea
           className={styles.textarea}
           name="prompt"
-          placeholder="Entrez un texte de moins de 4000 caractères pour le résumer en une phrase de 10 à 15 mots."
+          placeholder="Enter text of less than 4,000 characters to summarize it in a sentence of 10 to 15 words."
           id="prompt"
           maxLength={4000}
           rows={10}
@@ -54,6 +54,8 @@ const PromptForm = ({ defaultPrompt, defaultOptimized }: PromptFormProps) => {
 
       <div className={styles.formFooter}>
         <Field className={styles.switchField}>
+          <Label htmlFor="optimized">Optimized</Label>
+
           <Switch
             className={styles.switch}
             id="optimized"
@@ -64,7 +66,7 @@ const PromptForm = ({ defaultPrompt, defaultOptimized }: PromptFormProps) => {
             <span className={styles.switchIndicator} />
           </Switch>
 
-          <Label htmlFor="optimized">Non optimisé</Label>
+          <Label htmlFor="optimized">Non optimized</Label>
         </Field>
 
         <button type="submit" disabled={isPending} className={styles.submitButton}>
