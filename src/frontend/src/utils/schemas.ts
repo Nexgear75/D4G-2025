@@ -5,7 +5,7 @@ export const GetSummarySchema = z.object({
     .string()
     .min(1, { message: 'Le texte ne peut pas être vide.' })
     .max(4000, { message: 'Le texte ne peut pas dépasser 4000 caractères.' }),
-  optimized: z.coerce.boolean(),
+  optimized: z.stringbool(),
 });
 
 export type GetSummarySchemaType = z.infer<typeof GetSummarySchema>;

@@ -1,4 +1,9 @@
+import { loadEnvConfig } from '@next/env';
+
 import { z } from 'zod';
+
+const pwd = process.cwd();
+loadEnvConfig(pwd);
 
 const EnvSchema = z.object({
   API_URL: z.url(),

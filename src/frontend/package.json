@@ -9,11 +9,15 @@
     "lint": "npm-run-all format check-types eslint",
     "eslint": "eslint",
     "format": "prettier --check --write \"src/**/*.{ts,tsx}\"",
-    "check-types": "tsc --noemit"
+    "check-types": "tsc --noemit",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@eslint/js": "^9.39.1",
     "@headlessui/react": "^2.2.9",
+    "@next/env": "^16.0.1",
     "@next/eslint-plugin-next": "^16.0.1",
     "@trivago/prettier-plugin-sort-imports": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^8.46.3",
@@ -28,12 +32,18 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitest/coverage-v8": "^2.1.5",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.0.1",
-    "typescript": "^5"
+    "jsdom": "^25.0.0",
+    "typescript": "^5",
+    "vitest": "^2.1.5"
   }
 }
