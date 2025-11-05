@@ -2,6 +2,8 @@ import { PropsWithChildren } from 'react';
 
 import type { Metadata } from 'next';
 
+import styles from './layout.module.css';
+
 import '@/style/globals.css';
 
 export const metadata: Metadata = {
@@ -11,7 +13,12 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: Readonly<PropsWithChildren>) => (
   <html lang="fr">
-    <body>{children}</body>
+    <body>
+      {/* No need to use `aria-hidden` or `role="presentation"` because the screen readers won't take it into account */}
+      <div className={styles.decoration} />
+
+      {children}
+    </body>
   </html>
 );
 
