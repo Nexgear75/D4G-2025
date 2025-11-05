@@ -31,7 +31,7 @@ describe('PromptForm', () => {
 
     render(<PromptForm defaultPrompt="Hello world" defaultOptimized={true} />);
 
-    const textarea = screen.getByLabelText('Texte à résumer') as HTMLTextAreaElement;
+    const textarea = screen.getByLabelText('Text to summarize') as HTMLTextAreaElement;
     expect(textarea).toBeInTheDocument();
     expect(textarea.value).toBe('Hello world');
 
@@ -45,13 +45,13 @@ describe('PromptForm', () => {
 
     render(<PromptForm defaultPrompt="abc" defaultOptimized={false} />);
 
-    const textarea = screen.getByLabelText('Texte à résumer');
+    const textarea = screen.getByLabelText('Text to summarize');
     expect(textarea).toBeDisabled();
 
     const switchEl = screen.getByRole('switch');
     expect(switchEl).toBeDisabled();
 
-    const submit = screen.getByRole('button', { name: /générer le résumé/i });
+    const submit = screen.getByRole('button', { name: /Generate the summary/i });
     expect(submit).toBeDisabled();
   });
 
@@ -74,7 +74,7 @@ describe('PromptForm', () => {
 
     render(<PromptForm defaultPrompt="" defaultOptimized={false} />);
 
-    const textarea = screen.getByLabelText('Texte à résumer') as HTMLTextAreaElement;
+    const textarea = screen.getByLabelText('Text to summarize') as HTMLTextAreaElement;
     await user.type(textarea, 'Bonjour');
     expect(textarea.value).toBe('Bonjour');
 

@@ -12,13 +12,13 @@ describe('HomePage', () => {
   it('renders header, form and footer by default', async () => {
     await renderHome({});
     expect(screen.getByRole('heading', { level: 1, name: /Design4Green - Lumax/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /générer le résumé/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Generate the summary/i })).toBeInTheDocument();
     expect(screen.getByText(/Design4Green Projet 2025/i)).toBeInTheDocument();
   });
 
   it('passes defaultPrompt and defaultOptimized from search params to PromptForm', async () => {
     await renderHome({ prompt: 'Hello', optimized: 'true' });
-    const textarea = screen.getByLabelText('Texte à résumer') as HTMLTextAreaElement;
+    const textarea = screen.getByLabelText('Text to summarize') as HTMLTextAreaElement;
     expect(textarea.value).toBe('Hello');
 
     const switchEl = screen.getByRole('switch');
@@ -27,21 +27,21 @@ describe('HomePage', () => {
 
   it('conditionally renders summary and provided stats', async () => {
     await renderHome({
-      summary: 'Résumé généré',
+      summary: 'Generated summary',
       energy: '0.95',
       latency: '123',
       memory: '256',
     });
 
-    expect(screen.getByText('Résumé généré')).toBeInTheDocument();
+    expect(screen.getByText('Generated summary')).toBeInTheDocument();
 
-    expect(screen.getByText(/Energie/)).toBeInTheDocument();
+    expect(screen.getByText(/Energy/)).toBeInTheDocument();
     expect(screen.getByText(/0.95/)).toBeInTheDocument();
 
-    expect(screen.getByText(/Latence/)).toBeInTheDocument();
+    expect(screen.getByText(/Latency/)).toBeInTheDocument();
     expect(screen.getByText(/123/)).toBeInTheDocument();
 
-    expect(screen.getByText(/Mémoire/)).toBeInTheDocument();
+    expect(screen.getByText(/Memory/)).toBeInTheDocument();
     expect(screen.getByText(/256/)).toBeInTheDocument();
   });
 

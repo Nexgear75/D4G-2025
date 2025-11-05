@@ -45,7 +45,7 @@ const HomePage = async ({ searchParams }: HomePageParams) => {
               {energy !== undefined && (
                 <div className={styles.statsItem}>
                   <h4 className={styles.statsLabel} id="energy-label">
-                    Energie
+                    Energy
                   </h4>
                   <p className={styles.statsValue} aria-labelledby="energy-label">
                     {energy} <abbr title="Watt-hours">Wh</abbr>
@@ -56,7 +56,7 @@ const HomePage = async ({ searchParams }: HomePageParams) => {
               {latency !== undefined && (
                 <div className={styles.statsItem}>
                   <h4 className={styles.statsLabel} id="latency-label">
-                    Latence
+                    Latency
                   </h4>
                   <p className={styles.statsValue} aria-labelledby="latency-label">
                     {latency} <abbr title="milliseconds">ms</abbr>
@@ -67,7 +67,7 @@ const HomePage = async ({ searchParams }: HomePageParams) => {
               {memory !== undefined && (
                 <div className={styles.statsItem}>
                   <h4 className={styles.statsLabel} id="memory-label">
-                    Mémoire
+                    Memory
                   </h4>
                   <p className={styles.statsValue} aria-labelledby="memory-label">
                     {memory} <abbr title="Megabytes">Mb</abbr>

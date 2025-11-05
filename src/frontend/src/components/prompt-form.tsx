@@ -25,7 +25,7 @@ const PromptForm = ({ defaultPrompt, defaultOptimized }: PromptFormProps) => {
     <form className={styles.form} action={formAction}>
       <Field>
         <VisuallyHidden>
-          <Label htmlFor="prompt">Texte à résumer</Label>
+          <Label htmlFor="prompt">Text to summarize</Label>
         </VisuallyHidden>
 
         <Textarea
@@ -70,7 +70,7 @@ const PromptForm = ({ defaultPrompt, defaultOptimized }: PromptFormProps) => {
         </Field>
 
         <button type="submit" disabled={isPending} className={styles.submitButton}>
-          Générer le résumé
+          Generate the summary
         </button>
       </div>
     </form>
