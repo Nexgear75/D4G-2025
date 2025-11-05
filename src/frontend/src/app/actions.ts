@@ -37,9 +37,13 @@ export const getSummary = async (_prevState: State, formData: FormData): Promise
 
   const res = await fetch(url.toString(), {
     method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({ text: data.prompt, optimized: data.optimized }),
   });
   const body = await res.json();
+  console.log(body);
 
   const { summary, energy, latency, memory } = z
     .object({
