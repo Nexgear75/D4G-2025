@@ -1,26 +1,27 @@
-# DESIGN 4 GREEN 2025
+# Design4Green 2025
 
-## Sujet
-**Le sujet est diponible dans le fichier [SUJET.md](SUJET.md)**
+## Introduction
 
-## Règlement 
-### Partie logistique
-Le challenge débute le **mardi 04 novembre à 9h** et se termine le **jeudi 06 novembre à 9h**. 
+This repository contains the source code for the Design 4 Green 2025 project web page created by Team 4, consisting of Thomas
+Béchu, Alex Fougeroux, and Lukas Laudrain.
 
-Via **l'equipe Teams Design4Green 2025**, vous aurez la possibilité de **poser des questions**, par écrit, à des membres du jury ou à l'équipe technique de l'ESAIP sur les plages horaires suivantes : 
-- **9h-12h et 14h-18h** : pas de restriction.
-- **6h-9h et 18h-22h** : point bloquant uniquement ne pouvant pas attendre les plages horaires normales.
-- **22h-6h** : aucune réponse ne sera faite ni par le jury ni par l'equipe technique de l'ESAIP
+Named Lumax, this project is aimed at creating a web application that allows users to summarize a text of a maximum 4000
+characters into a sentence of 10 to 15 words.
 
-Les questions auxquelles répondront l'equipe technique de l'ESAIP doivent être strictement relatives à un souci technique (problème d'accès, matériel ...) et ne doivent en aucun cas concerner le sujet.
-Celles auxquelles répondront le jury doivent strictement être relatives à la compréhension du sujet.
+## Project Structure
 
-Les membres du jury ne peuvent aider individuellement les participants. Tous les échanges passeront par l'equipe Teams **Design4Green 2025**.
+The project is structured as follows:
+- `documentation/`: The project documentation assets.
+- `ai-models/`: The AI models used in the project and everything needed to train it.
+- `src/`: The web application frontend end backend code.
 
-### Partie technique
-Ressources mises à disposition :
--	Un repository git
+## Installation
 
-Les accès vous seront communiqués lors du démarrage du concours sur l’adresse mail du capitaine d’équipe entre 9h00 et 9h30.
+To execute the project, follow the instructions written in each `README.md` file of the subfolders.
 
-**ATTENTION** : A 9h00 le jeudi 06 novembre, l'accès au GIT sera fermé et vos comptes seront révoqués.
+The backend is built using Python and the frontend is built using TypeScript (and Node.js) so you will need to install
+both of them before running the project.
+
+## Example
+
+![example.png](documentation/example.png)
