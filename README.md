@@ -7,6 +7,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat&logo=typescript&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)
 ![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?style=flat&logo=huggingface&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat&logo=docker&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat)
 
 **Lumax** is an eco-designed web application that summarizes texts (up to 4000 characters) into concise 10–15 word sentences, while measuring energy consumption, latency, and memory usage per request.
@@ -17,9 +18,9 @@ Built for the [Design4Green 2025](https://design4green.org/) hackathon by **Team
 
 | Name | Role |
 |------|------|
-| **Thomas Béchu** | Developer |
-| **Alex Fougeroux** | Developer |
-| **Lukas Laudrain** | Developer |
+| **Thomas Béchu** | AI Model Development |
+| **Alex Fougeroux** | Architecture & Design |
+| **Lukas Laudrain** | Development |
 
 ## Features
 
@@ -38,6 +39,7 @@ Built for the [Design4Green 2025](https://design4green.org/) hackathon by **Team
 | **AI / ML** | PyTorch, Hugging Face Transformers, PEFT (LoRA), Accelerate |
 | **Metrics** | CodeCarbon (energy), psutil (memory) |
 | **Testing** | Vitest, Testing Library, jsdom |
+| **DevOps** | Docker, Docker Compose |
 | **Code Quality** | ESLint, Prettier, TypeScript strict mode |
 
 ## Project Structure
@@ -61,22 +63,45 @@ D4G-2025/
 │       │   └── styles/           # Global CSS
 │       ├── tests/                # Unit tests
 │       └── package.json
+├── docker-compose.yml            # One-command project startup
 ├── documentation/                # Project assets
 └── README.md
 ```
 
-## Prerequisites
+## Quick Start (Docker)
+
+The entire project can be started with a single command using Docker Compose.
+
+**Prerequisites:** [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/)
+
+```bash
+git clone https://github.com/Nexgear75/D4G-2025.git
+cd D4G-2025
+docker compose up --build
+```
+
+The application will be available at:
+- **Frontend:** http://localhost:3000
+- **Backend API:** http://localhost:5000
+
+To stop the services:
+
+```bash
+docker compose down
+```
+
+## Manual Installation
+
+### Prerequisites
 
 - **Python** 3.10+
 - **Node.js** 18+ with **pnpm** 10+
 - (Optional) CUDA-compatible GPU for faster inference
 
-## Installation
-
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-org>/D4G-2025.git
+git clone https://github.com/Nexgear75/D4G-2025.git
 cd D4G-2025
 ```
 
@@ -109,7 +134,17 @@ python train.py                # Re-train the model
 
 ## Usage
 
-### Start the backend
+### With Docker
+
+```bash
+docker compose up
+```
+
+### Without Docker
+
+Start each service in a separate terminal:
+
+**Backend:**
 
 ```bash
 cd src/backend
@@ -119,7 +154,7 @@ python app.py
 
 The API will be available at `http://localhost:5000`.
 
-### Start the frontend
+**Frontend:**
 
 ```bash
 cd src/frontend
