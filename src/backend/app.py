@@ -18,7 +18,10 @@ optimized_tokenizer = None
 
 # Model paths
 STANDARD_MODEL = "EleutherAI/pythia-70m-deduped"
-OPTIMIZED_MODEL_PATH = os.path.join(os.path.dirname(__file__), "../../AI-Models/finetuned-pythia-70m-cnn")
+OPTIMIZED_MODEL_PATH = os.environ.get(
+    "OPTIMIZED_MODEL_PATH",
+    os.path.join(os.path.dirname(__file__), "../../ai-models/finetuned-pythia-70m-cnn")
+)
 
 def load_standard_model():
     """Load the standard EleutherAI model for summarization"""
