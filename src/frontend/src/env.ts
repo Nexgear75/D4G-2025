@@ -10,7 +10,7 @@ const EnvSchema = z.object({
 });
 
 const ENV = EnvSchema.parse({
-  API_URL: "http://127.0.0.1:5000",
+  API_URL: process.env.API_URL || "http://127.0.0.1:5000",
 });
 
 export default ENV;
