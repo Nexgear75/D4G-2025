@@ -1,0 +1,24 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: src/backend/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - OPTIMIZED_MODEL_PATH=/models/finetuned-pythia-70m-cnn
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: src/frontend/Dockerfile
+      args:
+        API_URL: http://backend:5000
+    ports:
+      - "3000:3000"
+    environment:
+      - API_URL=http://backend:5000
+    depends_on:
+      - backend
+    restart: unless-stopped
